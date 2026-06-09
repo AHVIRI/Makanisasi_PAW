@@ -21,7 +21,7 @@ class ProductSeeder extends Seeder
                 'deskripsi' => 'Nasi goreng harum wangi dengan racikan bumbu khas, disajikan dengan telur mata sapi, ayam suwir, acar segar, dan kerupuk renyah.',
                 'kategori' => 'Makanan Utama',
                 'price' => 25000.00,
-                'image' => 'images/nasi_goreng.jpg',
+                'image' => 'https://res.cloudinary.com/dytpypzzj/image/upload/q_auto/f_auto/v1780979891/nasi_goreng_zycqjm.jpg',
                 'is_available' => true,
             ],
             [
@@ -29,7 +29,7 @@ class ProductSeeder extends Seeder
                 'deskripsi' => 'Mie goreng kenyal dengan tumisan udang segar, cumi-cumi, bakso ikan, telur orak-arik, dan sayuran segar berlumur kecap manis gurih.',
                 'kategori' => 'Makanan Utama',
                 'price' => 28000.00,
-                'image' => 'images/mie_goreng.jpg',
+                'image' => 'https://res.cloudinary.com/dytpypzzj/image/upload/q_auto/f_auto/v1780979313/mie_goreng_yfhy6o.jpg',
                 'is_available' => true,
             ],
             [
@@ -37,7 +37,7 @@ class ProductSeeder extends Seeder
                 'deskripsi' => 'Ayam bakar dengan bumbu madu gurih manis meresap hingga ke dalam, dipanggang dengan arang harum, disajikan dengan sambal terasi.',
                 'kategori' => 'Makanan Utama',
                 'price' => 30000.00,
-                'image' => 'images/ayam_bakar.jpg',
+                'image' => 'https://res.cloudinary.com/dytpypzzj/image/upload/q_auto/f_auto/v1780979312/ayam_bakar_asxikh.jpg',
                 'is_available' => true,
             ],
             [
@@ -45,7 +45,7 @@ class ProductSeeder extends Seeder
                 'deskripsi' => '10 tusuk sate daging ayam pilihan yang empuk dibakar dengan kematangan sempurna, disiram saus kacang gurih pekat dan irisan bawang merah.',
                 'kategori' => 'Makanan Utama',
                 'price' => 22000.00,
-                'image' => 'images/sate_ayam.jpg',
+                'image' => 'https://res.cloudinary.com/dytpypzzj/image/upload/q_auto/f_auto/v1780979314/sate_ayam_mdzldv.jpg',
                 'is_available' => true,
             ],
             [
@@ -53,7 +53,7 @@ class ProductSeeder extends Seeder
                 'deskripsi' => 'Dimsum ayam kukus bertekstur lembut dan kenyal, diisi daging ayam giling berkualitas tinggi, disajikan dengan saus sambal dimsum khas.',
                 'kategori' => 'Camilan',
                 'price' => 18000.00,
-                'image' => 'images/dimsum.jpg',
+                'image' => 'https://res.cloudinary.com/dytpypzzj/image/upload/q_auto/f_auto/v1780979312/dimsum_qhugll.jpg',
                 'is_available' => true,
             ],
         ];
@@ -72,7 +72,7 @@ class ProductSeeder extends Seeder
                 'deskripsi' => 'Teh hitam pilihan yang diseduh harum, disajikan dingin dengan es batu kristal dan rasa manis gula tebu asli yang menyegarkan.',
                 'kategori' => 'Dingin',
                 'price' => 5000.00,
-                'image' => 'images/es_teh.jpg',
+                'image' => 'https://res.cloudinary.com/dytpypzzj/image/upload/q_auto/f_auto/v1780979312/es_teh_pdfm2j.jpg',
                 'is_available' => true,
             ],
             [
@@ -80,7 +80,7 @@ class ProductSeeder extends Seeder
                 'deskripsi' => 'Perasan jeruk lokal segar alami kaya vitamin C, dipadukan dengan air gula murni dan es batu segar pelepas dahaga.',
                 'kategori' => 'Dingin',
                 'price' => 8000.00,
-                'image' => 'images/es_jeruk.jpg',
+                'image' => 'https://res.cloudinary.com/dytpypzzj/image/upload/q_auto/f_auto/v1780979313/es_jeruk_svvnbv.jpg',
                 'is_available' => true,
             ],
             [
@@ -88,7 +88,7 @@ class ProductSeeder extends Seeder
                 'deskripsi' => 'Espresso robusta berkualitas dipadu dengan susu segar creamy dan sirup gula aren organik yang legit.',
                 'kategori' => 'Kopi',
                 'price' => 15000.00,
-                'image' => 'images/kopi_aren.jpg',
+                'image' => 'https://res.cloudinary.com/dytpypzzj/image/upload/q_auto/f_auto/v1780979312/kopi_aren_y1dail.jpg',
                 'is_available' => true,
             ],
             [
@@ -96,7 +96,7 @@ class ProductSeeder extends Seeder
                 'deskripsi' => 'Bubuk matcha premium Jepang asli yang dikocok lembut dengan susu hangat atau es creamy sesuai selera, rasa sedikit pahit khas matcha yang nikmat.',
                 'kategori' => 'Dingin',
                 'price' => 18000.00,
-                'image' => 'images/matcha.jpg',
+                'image' => 'https://res.cloudinary.com/dytpypzzj/image/upload/q_auto/f_auto/v1780979313/matcha_tjxnik.jpg',
                 'is_available' => true,
             ],
             [
@@ -104,7 +104,7 @@ class ProductSeeder extends Seeder
                 'deskripsi' => 'Teh hitam pekat dicampur dengan kental manis lembut yang ditarik hingga berbusa melimpah, disajikan hangat menenangkan.',
                 'kategori' => 'Hangat',
                 'price' => 12000.00,
-                'image' => 'images/teh_tarik.jpg',
+                'image' => 'https://res.cloudinary.com/dytpypzzj/image/upload/q_auto/f_auto/v1780979314/teh_tarik_ironp6.jpg',
                 'is_available' => true,
             ],
         ];
