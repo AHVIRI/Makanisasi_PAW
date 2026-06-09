@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Makanan;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
@@ -35,7 +36,7 @@ class MakananController extends Controller
         ];
 
         if ($request->hasFile('image')) {
-            $uploadedFile = cloudinary()->upload($request->file('image')->getRealPath());
+            $uploadedFile = Cloudinary::upload($request->file('image')->getRealPath());
             $makananData['image'] = $uploadedFile->getSecurePath();
         }
 
@@ -67,7 +68,7 @@ class MakananController extends Controller
         // Handle image upload
         if ($request->hasFile('image')) {
             // Store new image
-            $uploadedFile = cloudinary()->upload($request->file('image')->getRealPath());
+            $uploadedFile = Cloudinary::upload($request->file('image')->getRealPath());
             $makananData['image'] = $uploadedFile->getSecurePath();
         }
 
