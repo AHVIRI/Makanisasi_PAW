@@ -89,7 +89,7 @@
             <div id="imagePreview" class="mt-4 border border-gray-100 rounded-2xl p-4 flex flex-col items-center bg-gray-50/50">
                 <span class="text-[10px] text-gray-400 uppercase font-light mb-2 block" id="preview-title">Foto Saat Ini:</span>
                 @if ($minuman->image)
-                    <img id="preview" class="max-w-xs h-32 object-cover rounded-xl shadow-md" src="{{ asset('storage/' . $minuman->image) }}">
+                    <img id="preview" class="max-w-xs h-32 object-cover rounded-xl shadow-md" src="{{ $minuman->image }}">
                 @else
                     <span id="no-img-text" class="text-gray-400 text-xs">Belum ada gambar</span>
                     <img id="preview" class="max-w-xs h-32 object-cover rounded-xl shadow-md hidden" src="">

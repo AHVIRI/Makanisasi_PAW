@@ -92,7 +92,7 @@
                     <!-- Image -->
                     <div class="relative overflow-hidden h-36 bg-gray-50">
                         @if($item->image)
-                            <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->nama_makanan }}" class="w-full h-full object-cover">
+                            <img src="{{ $item->image }}" alt="{{ $item->nama_makanan }}" class="w-full h-full object-cover">
                         @else
                             <div class="w-full h-full flex items-center justify-center text-gray-400">
                                 <span class="material-icons text-3xl">image</span>
@@ -151,7 +151,7 @@
                     <!-- Image -->
                     <div class="relative overflow-hidden h-36 bg-gray-50">
                         @if($item->image)
-                            <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->nama_minuman }}" class="w-full h-full object-cover">
+                            <img src="{{ $item->image }}" alt="{{ $item->nama_minuman }}" class="w-full h-full object-cover">
                         @else
                             <div class="w-full h-full flex items-center justify-center text-gray-400">
                                 <span class="material-icons text-3xl">image</span>

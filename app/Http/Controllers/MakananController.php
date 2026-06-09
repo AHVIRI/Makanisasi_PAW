@@ -35,8 +35,8 @@ class MakananController extends Controller
         ];
 
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('images', 'public');
-            $makananData['image'] = $imagePath;
+            $uploadedFile = cloudinary()->upload($request->file('image')->getRealPath());
+            $makananData['image'] = $uploadedFile->getSecurePath();
         }
 
         Makanan::create($makananData);
@@ -66,14 +66,9 @@ class MakananController extends Controller
 
         // Handle image upload
         if ($request->hasFile('image')) {
-            // Delete existing image if any
-            if ($makanan->image) {
-                Storage::delete('public/' . $makanan->image);
-            }
-
             // Store new image
-            $imagePath = $request->file('image')->store('images', 'public');
-            $makananData['image'] = $imagePath;
+            $uploadedFile = cloudinary()->upload($request->file('image')->getRealPath());
+            $makananData['image'] = $uploadedFile->getSecurePath();
         }
 
         $makanan->update($makananData);
@@ -84,10 +79,6 @@ class MakananController extends Controller
 
     public function destroy(Makanan $makanan)
     {
-        if ($makanan->image) {
-            Storage::delete('public/' . $makanan->image);
-        }
-
         $makanan->delete();
 
         session()->flash('success', 'Makanan berhasil dihapus!');

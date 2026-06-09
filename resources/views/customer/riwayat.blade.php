@@ -77,7 +77,7 @@
                             <!-- Thumbnail -->
                             <div class="w-16 h-16 rounded-2xl bg-gray-50 overflow-hidden flex-shrink-0">
                                 @if($product && $product->image)
-                                    <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->nama_makanan ?? $product->nama_minuman }}" class="w-full h-full object-cover">
+                                    <img src="{{ $product->image }}" alt="{{ $product->nama_makanan ?? $product->nama_minuman }}" class="w-full h-full object-cover">
                                 @else
                                     <div class="w-full h-full flex items-center justify-center text-gray-400">
                                         <span class="material-icons">image</span>

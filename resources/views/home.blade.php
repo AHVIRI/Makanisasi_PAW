@@ -121,7 +121,7 @@
                 
                 <!-- Product Image -->
                 <div class="relative overflow-hidden h-48 bg-gray-50">
-                    <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->nama_makanan }}" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    <img src="{{ $item->image }}" alt="{{ $item->nama_makanan }}" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                     <span class="absolute top-4 left-4 bg-amber-500 text-white font-extrabold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full shadow">
                         Makanan
                     </span>
@@ -194,7 +194,7 @@
                 
                 <!-- Product Image -->
                 <div class="relative overflow-hidden h-48 bg-gray-50">
-                    <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->nama_minuman }}" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    <img src="{{ $item->image }}" alt="{{ $item->nama_minuman }}" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                     <span class="absolute top-4 left-4 bg-blue-500 text-white font-extrabold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full shadow">
                         Minuman
                     </span>

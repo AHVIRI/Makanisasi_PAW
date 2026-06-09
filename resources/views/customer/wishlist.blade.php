@@ -39,7 +39,7 @@
                         <!-- Thumbnail -->
                         <div class="relative overflow-hidden h-48 bg-gray-50">
                             @if($product->image)
-                                <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->nama_makanan ?? $product->nama_minuman }}" class="w-full h-full object-cover">
+                                <img src="{{ $product->image }}" alt="{{ $product->nama_makanan ?? $product->nama_minuman }}" class="w-full h-full object-cover">
                             @else
                                 <div class="w-full h-full flex items-center justify-center text-gray-400">
                                     <span class="material-icons text-4xl">image</span>

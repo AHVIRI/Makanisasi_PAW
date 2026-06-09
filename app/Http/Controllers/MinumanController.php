@@ -35,8 +35,8 @@ class MinumanController extends Controller
         ];
 
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('images', 'public');
-            $minumanData['image'] = $imagePath;
+            $uploadedFile = cloudinary()->upload($request->file('image')->getRealPath());
+            $minumanData['image'] = $uploadedFile->getSecurePath();
         }
 
         Minuman::create($minumanData);
@@ -66,14 +66,9 @@ class MinumanController extends Controller
 
         // Handle image upload
         if ($request->hasFile('image')) {
-            // Delete existing image if any
-            if ($minuman->image) {
-                Storage::delete('public/' . $minuman->image);
-            }
-
             // Store new image
-            $imagePath = $request->file('image')->store('images', 'public');
-            $minumanData['image'] = $imagePath;
+            $uploadedFile = cloudinary()->upload($request->file('image')->getRealPath());
+            $minumanData['image'] = $uploadedFile->getSecurePath();
         }
 
         $minuman->update($minumanData);
@@ -84,10 +79,6 @@ class MinumanController extends Controller
 
     public function destroy(Minuman $minuman)
     {
-        if ($minuman->image) {
-            Storage::delete('public/' . $minuman->image);
-        }
-
         $minuman->delete();
 
         session()->flash('success', 'Minuman berhasil dihapus!');
