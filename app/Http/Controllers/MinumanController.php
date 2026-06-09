@@ -36,8 +36,9 @@ class MinumanController extends Controller
         ];
 
         if ($request->hasFile('image')) {
-            $uploadedFile = Cloudinary::upload($request->file('image')->getRealPath());
-            $minumanData['image'] = $uploadedFile->getSecurePath();
+            $result = \CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary::uploadApi()
+                ->upload($request->file('image')->getRealPath());
+            $minumanData['image'] = $result['secure_url'];
         }
 
         Minuman::create($minumanData);
@@ -67,9 +68,9 @@ class MinumanController extends Controller
 
         // Handle image upload
         if ($request->hasFile('image')) {
-            // Store new image
-            $uploadedFile = Cloudinary::upload($request->file('image')->getRealPath());
-            $minumanData['image'] = $uploadedFile->getSecurePath();
+            $result = \CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary::uploadApi()
+                ->upload($request->file('image')->getRealPath());
+            $minumanData['image'] = $result['secure_url'];
         }
 
         $minuman->update($minumanData);

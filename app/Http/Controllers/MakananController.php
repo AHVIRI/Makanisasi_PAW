@@ -36,8 +36,9 @@ class MakananController extends Controller
         ];
 
         if ($request->hasFile('image')) {
-            $uploadedFile = Cloudinary::upload($request->file('image')->getRealPath());
-            $makananData['image'] = $uploadedFile->getSecurePath();
+            $result = \CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary::uploadApi()
+                ->upload($request->file('image')->getRealPath());
+            $makananData['image'] = $result['secure_url'];
         }
 
         Makanan::create($makananData);
@@ -67,9 +68,9 @@ class MakananController extends Controller
 
         // Handle image upload
         if ($request->hasFile('image')) {
-            // Store new image
-            $uploadedFile = Cloudinary::upload($request->file('image')->getRealPath());
-            $makananData['image'] = $uploadedFile->getSecurePath();
+            $result = \CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary::uploadApi()
+                ->upload($request->file('image')->getRealPath());
+            $makananData['image'] = $result['secure_url'];
         }
 
         $makanan->update($makananData);
