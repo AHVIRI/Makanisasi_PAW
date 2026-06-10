@@ -16,7 +16,7 @@ class PengirimanController extends Controller
     // Tracking pengiriman untuk customer
     public function tracking($pemesananId)
     {
-        $pengiriman = \App\Models\Pengiriman::where('pemesanan_id', $pemesananId)->first();
+        $pengiriman = \App\Models\Pengiriman::with('pemesanan')->where('pemesanan_id', $pemesananId)->first();
 
         // Update status otomatis jika perlu
         if ($pengiriman) {

@@ -60,12 +60,19 @@
                                     <form action="{{ route('admin.pengiriman.update', $item->id) }}" method="POST" class="flex items-center gap-2 justify-center m-0">
                                         @csrf
                                         <div class="relative">
+                                            @php
+                                                $displayStatus = ($item->pemesanan->status_pembayaran === 'belum_bayar' && $item->pemesanan->metode_pembayaran !== 'COD') 
+                                                                  ? 'menunggu_pembayaran' 
+                                                                  : $item->status_pengiriman;
+                                            @endphp
                                             <select name="status_pengiriman" class="pl-3 pr-8 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 text-xs bg-gray-50/50 font-semibold text-gray-700 appearance-none">
-                                                <option value="menunggu_pembayaran" @if($item->status_pengiriman=='menunggu_pembayaran') selected @endif>Menunggu Pembayaran</option>
-                                                <option value="proses_memasak" @if($item->status_pengiriman=='proses_memasak') selected @endif>Proses Memasak</option>
-                                                <option value="dalam_perjalanan" @if($item->status_pengiriman=='dalam_perjalanan') selected @endif>Dalam Perjalanan</option>
-                                                <option value="sampai" @if($item->status_pengiriman=='sampai') selected @endif>Sampai (Selesai)</option>
-                                                <option value="gagal" @if($item->status_pengiriman=='gagal') selected @endif>Gagal</option>
+                                                @if($displayStatus === 'menunggu_pembayaran')
+                                                    <option value="menunggu_pembayaran" selected disabled>Menunggu Pembayaran</option>
+                                                @endif
+                                                <option value="proses_memasak" @if($displayStatus=='proses_memasak') selected @endif>Proses Memasak</option>
+                                                <option value="dalam_perjalanan" @if($displayStatus=='dalam_perjalanan') selected @endif>Dalam Perjalanan</option>
+                                                <option value="sampai" @if($displayStatus=='sampai') selected @endif>Sampai (Selesai)</option>
+                                                <option value="gagal" @if($displayStatus=='gagal') selected @endif>Gagal</option>
                                             </select>
                                             <span class="material-icons absolute right-2.5 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm pointer-events-none">expand_more</span>
                                         </div>

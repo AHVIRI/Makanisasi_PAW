@@ -42,7 +42,7 @@ Route::middleware(['auth', 'role:Customer'])->group(function() {
     Route::post('/pemesanan/pembayaran/konfirmasi', [PemesananController::class, 'konfirmasiPembayaran'])->name('pemesanan.konfirmasi');
     
     // Batalkan pemesanan
-    Route::post('/pemesanan/{id}/batal', [PemesananController::class, 'destroy'])->name('pemesanan.batalkan');
+    Route::post('/pemesanan/{pemesanan}/batal', [PemesananController::class, 'destroy'])->name('pemesanan.batalkan');
 
     // Riwayat pesanan
     Route::get('/riwayat', [PemesananController::class, 'history'])->name('pemesanan.history');

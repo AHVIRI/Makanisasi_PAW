@@ -52,7 +52,9 @@
                 <h3 class="text-sm font-bold uppercase tracking-wider text-gray-400 mb-8">Status Perjalanan</h3>
                 
                 @php
-                    $status = $pengiriman->status_pengiriman;
+                    $status = ($pengiriman->pemesanan->status_pembayaran === 'belum_bayar' && $pengiriman->pemesanan->metode_pembayaran !== 'COD') 
+                              ? 'menunggu_pembayaran' 
+                              : $pengiriman->status_pengiriman;
                 @endphp
 
                 <!-- Vertical Timeline -->

@@ -30,7 +30,9 @@
                 @php
                     $product = $pesanan->makanan ?? $pesanan->minuman;
                     $type = $pesanan->makanan ? 'makanan' : 'minuman';
-                    $statusPengiriman = $pesanan->pengiriman?->status_pengiriman ?? 'menunggu_pembayaran';
+                    $statusPengiriman = ($pesanan->status_pembayaran === 'belum_bayar' && $pesanan->metode_pembayaran !== 'COD') 
+                                        ? 'menunggu_pembayaran' 
+                                        : ($pesanan->pengiriman?->status_pengiriman ?? 'menunggu_pembayaran');
                 @endphp
                 
                 <div class="bg-white rounded-3xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition">

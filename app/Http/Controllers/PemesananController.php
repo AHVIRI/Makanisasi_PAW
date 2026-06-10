@@ -80,8 +80,8 @@ class PemesananController extends Controller
                 'alamat_pengiriman' => $request->alamat_pengiriman,
                 'nomor_resi' => $nomorResi,
                 'tanggal_kirim' => now(),
-                'status_pengiriman' => $isCOD ? 'proses_memasak' : 'menunggu_pembayaran',
-                'status_updated_at' => now(),
+                'status_pengiriman' => 'proses_memasak',
+                'status_updated_at' => $isCOD ? now() : null,
             ]);
         }
 
@@ -179,7 +179,7 @@ class PemesananController extends Controller
 
         $pemesanan->delete();
 
-        return redirect()->route('pemesanan.batalkan')->with('success', 'Pesanan berhasil dibatalkan.');
+        return redirect()->route('pemesanan.history')->with('success', 'Pesanan berhasil dibatalkan.');
     }
 
     // Riwayat pesanan untuk customer
